@@ -5,6 +5,7 @@ from __future__ import annotations
 from homeassistant.components.sensor import SensorEntity, SensorStateClass
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import (
     CoordinatorEntity,
@@ -42,7 +43,12 @@ class OilPriceSensorBase(CoordinatorEntity, SensorEntity):
     def __init__(self, coordinator: DataUpdateCoordinator, entry: ConfigEntry) -> None:
         super().__init__(coordinator)
         self._entry = entry
-        # Availability follows the coordinator automatically via CoordinatorEntity.
+        self._attr_device_info = DeviceInfo(
+            identifiers={(DOMAIN, entry.entry_id)},
+            name=entry.title,
+            entry_type=DeviceEntryType.SERVICE,
+            manufacturer="qiyoujiage.com",
+        )
 
     @property
     def _update_time(self):

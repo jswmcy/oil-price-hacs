@@ -23,7 +23,7 @@
 ### 方式一：HACS（推荐）
 
 1. HACS → **Integrations** → 右上角 **⋮** → **Custom repositories**
-2. Add，填本仓库地址：`https://github.com/zhoujunn/oil-price-hacs`，类别选 **Integration**
+2. Add，填本仓库地址：`https://github.com/jswmcy/oil-price-hacs`，类别选 **Integration**
 3. 搜索 **China Oil Price** → Install → 重启 Home Assistant
 
 ### 方式二：手动

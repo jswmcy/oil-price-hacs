@@ -37,7 +37,7 @@ _CHANGE_RE = re.compile(
     r"(9[258](?:#|号)?|0(?:#|号)?)\D{0,10}?(上调|下调)\D{0,4}?([\d.]+)\s*元"
 )
 # Extract the first number out of a price cell like "8.58" or "8.58元".
-_CHANGE_NUM_RE = re.compile(r"[-+]?\d+(?:\.\d+)?")
+_PRICE_NUM_RE = re.compile(r"[-+]?\d+(?:\.\d+)?")
 
 
 def _decode(raw: bytes) -> str:
@@ -70,7 +70,7 @@ def parse_oil_data(html: str) -> dict[str, Any]:
             if not dt or not dd:
                 continue
             label = dt.get_text(strip=True)
-            value = _CHANGE_NUM_RE.search(dd.get_text(strip=True))
+            value = _PRICE_NUM_RE.search(dd.get_text(strip=True))
             if not value:
                 continue
             for key in OIL_TYPES:

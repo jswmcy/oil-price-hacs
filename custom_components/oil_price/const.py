@@ -2,8 +2,10 @@
 
 from datetime import timedelta
 
+from homeassistant.const import Platform
+
 DOMAIN = "oil_price"
-PLATFORMS = ["sensor"]
+PLATFORMS = [Platform.SENSOR]
 
 ICON_STATION = "mdi:gas-station"
 ICON_HINT = "mdi:information-outline"
