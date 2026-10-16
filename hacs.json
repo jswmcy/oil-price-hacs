@@ -1,0 +1,8 @@
+{
+  "name": "China Oil Price",
+  "content_in_root": false,
+  "domains": ["sensor"],
+  "country": "CN",
+  "render_readme": true,
+  "homeassistant": "2024.6.0"
+}

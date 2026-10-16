@@ -1,0 +1,22 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Setup China Oil Price Sensor",
+        "description": "Enter a name and region code (e.g. jiangsu, beijing, shanghai). The region is validated with a test fetch on save.",
+        "data": {
+          "name": "Name",
+          "region": "Region code",
+          "scan_interval_hours": "Refresh interval in hours (optional, default 8)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach qiyoujiage.com, please check your network.",
+      "invalid_region": "Invalid region code or the page could not be parsed (e.g. jiangsu)."
+    },
+    "abort": {
+      "already_configured": "This region is already configured."
+    }
+  }
+}

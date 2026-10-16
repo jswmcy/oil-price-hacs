@@ -1,0 +1,22 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "设置油价传感器",
+        "description": "请输入名称和地区代码（如 jiangsu、beijing、shanghai）。保存时会试抓一次以校验地区是否有效。",
+        "data": {
+          "name": "名称",
+          "region": "地区代码",
+          "scan_interval_hours": "刷新间隔（小时，可选，默认8）"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "无法连接 qiyoujiage.com，请检查网络。",
+      "invalid_region": "地区代码无效或页面结构无法解析，请核对（如 jiangsu）。"
+    },
+    "abort": {
+      "already_configured": "该地区已经添加过了。"
+    }
+  }
+}
